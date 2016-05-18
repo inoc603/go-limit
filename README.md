@@ -3,7 +3,7 @@ Simple tool to run command with limited resource. Only works on linux for now.
 
 ## Install
 
-Your need libcgroup to compile [gp-cgroup](https://github.com/vbatts/go-cgroup). Install
+Your need libcgroup to compile [go-cgroup](https://github.com/vbatts/go-cgroup). Install
 it with your package manager:
 
 On debian:
@@ -26,9 +26,20 @@ go get github.com/inoc603/go-limit
 
 ## Usage
 
+Make sure you have root privilege and `$GOPATH/bin` is in your `PATH`
+
 ```bash
 go-limit --cpu CPU_USAGE_PERCENTAGE --memory MEMORY_LIMIT YOUR_COMMAND
 ```
+
+`CPU_USAGE_PERCENTAGE` is an interger between 1 and 100
+
+`MEMORY_LIMIT` is the memory limit in bytes, the following formats are allowed:
+
+- 512
+- 128k 128k
+- 128m 128M
+- 128g 128G
 
 ## Example
 
